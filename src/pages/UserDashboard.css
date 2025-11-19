@@ -1,0 +1,85 @@
+.dashboard-wrapper {
+  padding: 2rem;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.profile-card,
+.purchase-history-card {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  width: 100%;
+  max-width: 400px;
+  color:#111827;
+}
+
+.profile-card h2,
+.purchase-history-card h2 {
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.logout-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.payments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.payment-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #374151;
+}
+
+.payment-body {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.payment-total {
+  text-align: right;
+  font-weight: bold;
+  color: #111827;
+}
+
+.no-purchase-msg {
+  color: #6b7280;
+  padding-top: 1rem;
+}

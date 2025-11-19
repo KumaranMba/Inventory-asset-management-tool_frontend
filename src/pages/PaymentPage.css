@@ -1,0 +1,77 @@
+.payment-page {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  background: linear-gradient(145deg, #e3f2fd, #ffffff);
+  min-height: 100vh;
+}
+
+.payment-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.checkout-details {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.left, .right {
+  background: #2e0854;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.summary-item {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+.payment-method {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.payment-method label {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.pay-btn {
+  background: #27ae60;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: 0.3s;
+}
+
+.pay-btn:hover {
+  background: #219653;
+}

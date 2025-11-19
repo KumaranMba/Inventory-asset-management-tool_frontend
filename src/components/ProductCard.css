@@ -1,0 +1,252 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.homepage-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f2f6ff;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+.hero-button {
+  padding: 12px 24px;
+  background-color: #ffffff;
+  color: #4a4a4a;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* Product Section */
+.products-section {
+  padding: 40px 5%;
+  background-color: #fff;
+}
+
+.section-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.category-block {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* View All Button */
+.view-all-button-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-all-btn {
+  padding: 10px 20px;
+  background-color: #4b6cb7;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-all-btn:hover {
+  background-color: #2c3e94;
+}
+
+/* Product Popup */
+.product-popup {
+  position: fixed;
+  top: 5%;
+
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: #ff5e5e;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.popup-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.product-info {
+  flex: 1;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.popup-buttons {
+  margin-top: 20px;
+}
+
+.popup-buy-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #009688;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popup-buy-button:hover {
+  background-color: #00796b;
+}
+
+/* Chatbot Styles */
+.chatbot-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.chatbot-box:not(.open) {
+  height: 45px;
+}
+
+.chatbot-header {
+  background-color: #4b6cb7;
+  color: white;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chatbot-body {
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.user-msg {
+  text-align: right;
+  background-color: #e1f5fe;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.bot-msg {
+  text-align: left;
+  background-color: #f3f3f3;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.chatbot-body input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.chatbot-body button {
+  background-color: #4b6cb7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .product-popup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popup-image {
+    width: 100%;
+    height: auto;
+  }
+}

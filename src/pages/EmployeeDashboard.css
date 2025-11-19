@@ -1,0 +1,122 @@
+.emp-dashboard-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.employee-profile-box {
+  background: #f9f9f9;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  color:black;
+}
+
+.permissions-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.product-card1-section h2 {
+  margin-top: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.product-card1 {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: black;
+}
+
+.product-card1 .desc {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 0.4rem 0.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.view {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn.edit {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn.save {
+  background-color: #00b894;
+  color: white;
+}
+
+.btn.cancel {
+  background-color: #d63031;
+  color: white;
+}
+
+.logout-btn {
+  margin-top: 2rem;
+  background-color: #ff7675;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.view-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.view-content {
+  background: rgb(17, 17, 220);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-view {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

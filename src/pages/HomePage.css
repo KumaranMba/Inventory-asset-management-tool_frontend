@@ -1,0 +1,299 @@
+/* HomePage.css */
+
+.homepage-container {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eddcdc;
+    color: #333;
+  }
+  
+  .hero-section {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+      url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e') center/cover no-repeat;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 2rem;
+  }
+  
+  .hero-content {
+    max-width: 700px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-button {
+    background-color: #ff6b6b;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .hero-button:hover {
+    background-color: #e74c3c;
+  }
+  
+  .products-section {
+    padding: 4rem 2rem;
+    background-color: #eddcdc;
+  }
+  
+  .section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .category-block {
+    margin-bottom: 4rem;
+  }
+  
+  .category-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    border-left: 5px solid #ff6b6b;
+    padding-left: 1rem;
+  }
+  .product-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    max-width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    z-index: 9999;
+    overflow-y: auto;
+  }.sold-out-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  padding: 10px;
+  display: inline-block;
+}
+  
+  .close-popup {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    float: right;
+    cursor: pointer;
+  }.chat-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: white;
+  float: right;
+  cursor: pointer;
+  margin-right: 10px;
+}
+  
+  .popup-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .popup-price {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #e67e22;
+  }
+  
+  .popup-desc {
+    margin-top: 1rem;
+    color: #555;
+  }
+  
+  .popup-buy-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .chatbot-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 250px;
+    background: #f1f1f1;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+    z-index: 9999;
+    transition: height 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .chatbot-header {
+    background-color: #3498db;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+  }
+  
+  .chatbot-body {
+    padding: 1rem;
+  }
+  
+  .chatbot-body input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .chatbot-body button {
+    padding: 0.4rem 1rem;
+    
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .hero-section {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+  }
+  .hero-button {
+    background-color: #ffca28;
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .hero-button:hover {
+    background-color: #ffc107;
+  }
+  
+  .view-all-button-wrapper {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .view-all-btn {
+    background-color: #4e54c8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .view-all-btn:hover {
+    background-color: #3e42a3;
+  }
+  
+  .product-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  max-width: 90%;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  z-index: 9999;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0); /* active by default */
+}
+
+.product-popup.hidden {
+  transform: translateX(100%); /* slide out */
+}
+
+.close-popup {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  float: right;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.popup-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.product-info {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.product-info h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.popup-buy-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.popup-buy-button:hover {
+  background-color: #27ae60;
+}

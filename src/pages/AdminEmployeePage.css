@@ -1,0 +1,170 @@
+.admin-employee-page {
+  background-color: #121212;
+  color: #eee;
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-employee-page h2 {
+  
+  color: #00ffff;
+  border-bottom: 2px solid #00ffff30;
+  margin-bottom: 1.5rem;
+}
+
+.employee-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  
+}
+
+.employee-form input[type="text"],
+.employee-form input[type="email"],
+.employee-form input[type="password"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.employee-form label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.employee-form button {
+  grid-column: 1 / -1;
+  padding: 10px;
+  background-color: #00ffff;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.employee-form button:hover {
+  background-color: #00d4d4;
+}
+
+.employee-list table {
+  width: 100%;
+  background-color: #1e1e1e;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.employee-list th,
+.employee-list td {
+  border: 1px solid #333;
+  padding: 12px;
+  text-align: left;
+}
+
+.employee-list th {
+  background-color: #00ffff30;
+  color: #00ffff;
+}
+.admin-employee-page {
+  display: flex;
+  background-color: #1e1e2f;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background-color: #121212;
+  padding: 20px;
+  height: 100vh;
+}
+
+.admin-sidebar h2 {
+  color: #00d9ff;
+  margin-bottom: 20px;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar ul li {
+  margin: 15px 0;
+}
+
+.admin-sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  display: block;
+  border-radius: 5px;
+}
+
+.admin-sidebar ul li a:hover {
+  background-color: #333;
+}
+
+.employee-main {
+  flex: 1;
+  padding: 30px;
+}
+
+.employee-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: #2b2b3c;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.employee-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.employee-form button {
+  background-color: #00d9ff;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.employee-list {
+  margin-top: 40px;
+}
+
+.employee-list table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2c2c3c;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.employee-list th, .employee-list td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
