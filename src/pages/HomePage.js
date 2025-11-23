@@ -6,6 +6,7 @@ import ProductCard from '../components/ProductCard';
 import Footer from '../components/Footer';
 import FeatureSection from '../components/FeatureSection';
 import './HomePage.css';
+import { API_URL } from "../api";
 
 const HomePage = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -20,7 +21,7 @@ const HomePage = () => {
 
   // Fetch grouped products by category
   useEffect(() => {
-    axios.get('http://localhost:5000/api/product/grouped')
+    axios.get(`${API_URL}/api/product/grouped`)
       .then(res => setProductsByCategory(res.data))
       .catch(err => console.error("Error fetching products:", err));
   }, []);
@@ -34,7 +35,7 @@ const HomePage = () => {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/product/cart', {
+      await axios.post(`${API_URL}/api/product/cart`, {
         userId: user.id,
         productId: selectedProduct._id,
         quantity: 1,
@@ -140,7 +141,7 @@ const HomePage = () => {
         <div className="product-popup">
           <button className="close-popup" onClick={() => setSelectedProduct(null)}>✖</button>
           <img
-            src={`http://localhost:5000${selectedProduct.image}`}
+            src={`${API_URL}${selectedProduct.image}`}
             alt={selectedProduct.name}
             className="popup-image"
           />

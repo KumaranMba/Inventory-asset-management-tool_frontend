@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './CartPage.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { API_URL } from "../api";
 
 const CartPage = () => {
   // State: Store cart items and logged-in user
@@ -24,7 +25,7 @@ const CartPage = () => {
   // API: Fetch cart items for a specific user
   const fetchCartItems = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/product/cart/${userId}`);
+      const response = await axios.get(`${API_URL}/api/product/cart/${userId}`);
       setCartItems(response.data);
     } catch (error) {
       console.error("Failed to fetch cart items:", error);
@@ -34,7 +35,7 @@ const CartPage = () => {
   // API: Remove an item from the cart
   const handleRemove = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/product/cart/remove/${itemId}`);
+      await axios.delete(`${API_URL}/api/product/cart/remove/${itemId}`);
       setCartItems(cartItems.filter(item => item._id !== itemId));
     } catch (error) {
       console.error("Failed to remove item:", error);
@@ -54,7 +55,7 @@ const CartPage = () => {
 
     try {
       const updatedItem = updatedItems.find(item => item._id === itemId);
-      await axios.put(`http://localhost:5000/api/product/cart/update/${itemId}`, {
+      await axios.put(`${API_URL}/api/product/cart/update/${itemId}`, {
         quantity: updatedItem.quantity
       });
     } catch (err) {
@@ -95,7 +96,7 @@ const CartPage = () => {
               <div className="cart-items">
                 {cartItems.map((item) => (
                   <div key={item._id} className="cart-card">
-                    <img src={`http://localhost:5000${item.product.image}`} alt={item.product.name} />
+                    <img src={`${API_URL}${item.product.image}`} alt={item.product.name} />
                     <div className="cart-details">
                       <h3>{item.product.name}</h3>
                       <p>Price: ₹{item.product.price}</p>

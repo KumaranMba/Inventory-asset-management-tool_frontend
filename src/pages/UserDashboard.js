@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './UserDashboard.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { API_URL } from "../api";
 
 const UserDashboard = () => {
   const [user, setUser] = useState(null); // Stores user data
@@ -24,7 +25,7 @@ const UserDashboard = () => {
   // Fetch payment data by user ID
   const fetchPayments = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/product/payment/user/${userId}`);
+      const response = await axios.get(`${API_URL}/api/product/payment/user/${userId}`);
       setPayments(response.data); // Set payments state
     } catch (error) {
       console.error("Error fetching payment history:", error);

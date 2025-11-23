@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/EmployeeNavbar';
 import Footer from '../components/Footer';
 import './EmployeeDashboard.css';
+import { API_URL } from "../api";
 
 const EmployeeDashboard = () => {
   // State variables
@@ -30,7 +31,7 @@ const EmployeeDashboard = () => {
   // Fetch all products from the backend
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/product/');
+      const res = await axios.get(`${API_URL}/api/product/`);
       setProducts(res.data);
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -75,7 +76,7 @@ const EmployeeDashboard = () => {
   // Save updated product info
   const saveEdit = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/product/edit/${id}`, editData);
+      await axios.put(`${API_URL}/api/product/edit/${id}`, editData);
       fetchProducts(); // Refresh list after save
       setEditingId(null);
       setEditData({});

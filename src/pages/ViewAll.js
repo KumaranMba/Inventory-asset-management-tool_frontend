@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './ViewAllPage.css';
 import './HomePage.css';
+import { API_URL } from "../api";
 
 const ViewAllPage = () => {
   // State variables for products and filters
@@ -28,7 +29,7 @@ const ViewAllPage = () => {
     // fetch products initially
       const fetchProducts = async () => {
         try {
-          const res = await axios.get('http://localhost:5000/api/product');
+          const res = await axios.get(`${API_URL}/api/product`);
           setProducts(res.data);
         } catch (err) {
           console.error('Failed to fetch products', err);
@@ -47,7 +48,7 @@ const ViewAllPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/product/');
+        const response = await axios.get(`${API_URL}/api/product/`);
         setProducts(response.data); // Store fetched products
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -81,7 +82,7 @@ const ViewAllPage = () => {
         }
     
         try {
-          await axios.post('http://localhost:5000/api/product/cart', {
+          await axios.post(`${API_URL}/api/product/cart`, {
             userId: user.id,
             productId: selectedProduct._id,
             quantity: 1,
@@ -194,7 +195,7 @@ const ViewAllPage = () => {
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div key={product._id} className="viewall-card">
-                <img src={`http://localhost:5000${product.image}`} alt={product.name} />
+                <img src={`${API_URL}${product.image}`} alt={product.name} />
                 <div className="card-info">
                   <h3>{product.name}</h3>
                   <p className="price">₹{product.price}</p>
@@ -215,7 +216,7 @@ const ViewAllPage = () => {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
       <h2>{selectedProduct.name}</h2>
       <img
-      src={`http://localhost:5000${selectedProduct.image}`}
+      src={`${API_URL}${selectedProduct.image}`}
       alt={selectedProduct.name}
       className="modal-image"
     />

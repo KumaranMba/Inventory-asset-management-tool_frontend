@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminLoginPage.css';
 
+
 const AdminLoginPage = () => {
   // State: Email and Password input
   const [email, setEmail] = useState('');

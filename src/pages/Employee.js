@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './AdminEmployeePage.css';
 import { Link } from 'react-router-dom';
+import { API_URL } from "../api";
 
 const AdminEmployeePage = () => {
   // State: Form inputs and permissions for new employee
@@ -25,7 +26,7 @@ const AdminEmployeePage = () => {
   // Function: Fetch employee data from backend
   const fetchEmployees = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/employees');
+      const res = await axios.get(`${API_URL}/api/employees`);
       setEmployees(res.data);
     } catch (err) {
       console.error('Error fetching employees:', err);
@@ -55,7 +56,7 @@ const AdminEmployeePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/employees/add', formData);
+      await axios.post(`${API_URL}/api/employees/add`, formData);
       fetchEmployees(); // Refresh list after adding
       // Reset form
       setFormData({
@@ -75,7 +76,7 @@ const AdminEmployeePage = () => {
   if (!window.confirm("Are you sure you want to remove this employee?")) return;
 
   try {
-    const response = await axios.delete(`http://localhost:5000/api/employees/delete/${id}`);
+    const response = await axios.delete(`${API_URL}/api/employees/delete/${id}`);
 
     alert(response.data.message);  // "Employee removed successfully"
     fetchEmployees();               // Refresh employee list

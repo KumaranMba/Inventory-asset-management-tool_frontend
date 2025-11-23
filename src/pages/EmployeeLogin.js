@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../api/axiosConfig';
 import './EmployeeLogin.css';
+import { API_URL } from "../api";
 
 const EmployeeLoginPage = () => {
   // Local state for login credentials
@@ -15,7 +16,7 @@ const EmployeeLoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/employees/login', {
+      const response = await axios.post(`${API_URL}/api/employees/login`, {
         email,
         password
       });

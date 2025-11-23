@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './PaymentPage.css'; // Import stylesheet
+import { API_URL } from "../api";
 
 const PaymentPage = () => {
   // Get cart data and total amount from the previous page via state
@@ -50,7 +51,7 @@ const PaymentPage = () => {
 
     try {
       // Step 1: Save payment details
-      await fetch('http://localhost:5000/api/product/payment/save', {
+      await fetch(`${API_URL}/api/product/payment/save`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(paymentDetails)
@@ -58,7 +59,7 @@ const PaymentPage = () => {
 
       // Step 2: Update product stock quantities
       await Promise.all(cartItems.map(item =>
-        fetch(`http://localhost:5000/api/product/update-stock/${item.product._id}`, {
+        fetch(`${API_URL}/api/product/update-stock/${item.product._id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ quantity: item.quantity })
@@ -67,7 +68,7 @@ const PaymentPage = () => {
 
       // Step 3: Remove items from cart
       await Promise.all(cartItems.map(item =>
-        fetch(`http://localhost:5000/api/product/cart/remove/${item._id}`, {
+        fetch(`${API_URL}/api/product/cart/remove/${item._id}`, {
           method: 'DELETE'
         })
       ));

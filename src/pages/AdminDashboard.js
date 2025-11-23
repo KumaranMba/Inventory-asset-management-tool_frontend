@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './AdminDashboard.css';
+import { API_URL } from "../api";
 
 const AdminViewProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -18,7 +19,7 @@ const AdminViewProductsPage = () => {
   // fetch products initially
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/product');
+      const res = await axios.get(`${API_URL}/api/product`);
       setProducts(res.data);
     } catch (err) {
       console.error('Failed to fetch products', err);
@@ -44,7 +45,7 @@ const AdminViewProductsPage = () => {
    //console.log(id);
 
   try {
-    const response = await axios.delete(`http://localhost:5000/api/product/delete/${id}`);
+    const response = await axios.delete(`${API_URL}/api/product/delete/${id}`);
 
     
     alert(response.data.message);
@@ -66,7 +67,7 @@ const AdminViewProductsPage = () => {
   // save edit product api
   const saveEdit = async (id) => {
   try {
-    await axios.put(`http://localhost:5000/api/product/edit/${id}`, editData); // Sends { description, stockQuantity }
+    await axios.put(`${API_URL}/api/product/edit/${id}`, editData); // Sends { description, stockQuantity }
     fetchProducts();  // Refresh list
     setEditingId(null);
   } catch (err) {
@@ -138,7 +139,7 @@ const AdminViewProductsPage = () => {
           {filteredProducts.map((product) => (
             <div key={product._id} className="product-card">
               <img
-                src={`http://localhost:5000${product.image}`}
+                src={`${API_URL}${product.image}`}
                 alt={product.name}
                 className="card-image"
               />

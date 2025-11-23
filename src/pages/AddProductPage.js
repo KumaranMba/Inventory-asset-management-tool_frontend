@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './AddProductPage.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from "../api";
 
 const AddProductPage = () => {
   const [formData, setFormData] = useState({
@@ -64,7 +65,7 @@ const AddProductPage = () => {
     });
 
     const response = await axios.post(
-      'http://localhost:5000/api/product/add',
+      `${API_URL}/api/product/add`,
       submissionData,
       {
         headers: {

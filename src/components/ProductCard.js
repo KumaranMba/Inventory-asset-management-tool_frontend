@@ -1,5 +1,6 @@
 import React from 'react';
 import './ProductCard.css';
+import { API_URL } from "../api";
 
 const ProductCard = ({ product }) => {
   // Function to generate star icons based on rating
@@ -31,7 +32,7 @@ const ProductCard = ({ product }) => {
       {/* Product image */}
       <img
         className="product-img"
-        src={`http://localhost:5000${product.image}`}
+        src={`${API_URL}${product.image}`}
         alt={product.name}
         style={{ width: '100%' }}
       />

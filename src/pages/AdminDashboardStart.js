@@ -6,6 +6,7 @@ import {
 } from 'recharts';
 import { Link } from 'react-router-dom';
 import './AdminDashboardStart.css';
+import { API_URL } from "../api";
 
 const AdminDashboard = () => {
   // State Declarations
@@ -35,7 +36,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      const res = await axios.get(`http://localhost:5000/api/product/download-excel?month=${selectedMonth}&year=${selectedYear}`, {
+      const res = await axios.get(`${API_URL}/api/product/download-excel?month=${selectedMonth}&year=${selectedYear}`, {
         responseType: 'blob',
       });
 
@@ -54,7 +55,7 @@ const AdminDashboard = () => {
   // API: Download All Users Excel Report
   const downloadAllUsersExcel = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/product/users/download-excel/`, {
+      const res = await axios.get(`${API_URL}/api/product/users/download-excel/`, {
         responseType: 'blob',
       });
 
@@ -73,10 +74,10 @@ const AdminDashboard = () => {
   // API: Fetch Total Users and Employees Count
   const fetchCounts = async () => {
     try {
-      const userRes = await axios.get('http://localhost:5000/api/product/count');
+      const userRes = await axios.get(`${API_URL}/api/product/count`);
       setUserCount(userRes.data.count);
 
-      const empRes = await axios.get('http://localhost:5000/api/employees/count');
+      const empRes = await axios.get(`${API_URL}/api/employees/count`);
       setEmployeeCount(empRes.data.count);
     } catch (err) {
       console.error('Error fetching user count:', err);
@@ -86,11 +87,11 @@ const AdminDashboard = () => {
   // API: Fetch Total Sales, Orders, and Sales History
   const fetchSalesData = async () => {
     try {
-      const res1 = await axios.get('http://localhost:5000/api/product/total-sales');
+      const res1 = await axios.get(`${API_URL}/api/product/total-sales`);
       setTotalSales(res1.data.totalSales || 0);
       setTotalOrders(res1.data.totalOrders || 0);
 
-      const res2 = await axios.get('http://localhost:5000/api/product/sales-history');
+      const res2 = await axios.get(`${API_URL}/api/product/sales-history`);
       setSalesHistory(res2.data);
     } catch (err) {
       console.error('Error fetching sales data:', err);
@@ -100,7 +101,7 @@ const AdminDashboard = () => {
   // API: Fetch All Products
   const fetchProducts = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/product/');
+      const res = await axios.get(`${API_URL}/api/product/`);
       setProductData(res.data);
 
       if (res.data.length > 0) {
@@ -116,7 +117,7 @@ const AdminDashboard = () => {
   // API: Fetch Stock History by Product ID
   const fetchStockHistory = async (productId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/product/${productId}/stock-history`);
+      const res = await axios.get(`${API_URL}/api/product/${productId}/stock-history`);
       setStockHistory(res.data);
       setSelectedProduct(productId);
     } catch (err) {
